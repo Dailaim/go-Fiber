@@ -1,0 +1,14 @@
+{
+  "name": "backend",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.go",
+  "scripts": {
+    "dev": "air ./main.go",
+    "build": "go build ./main.go",
+    "back": "air ./main.go"
+  },
+  "keywords": [],
+  "author": ""
+}
