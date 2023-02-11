@@ -16,6 +16,7 @@ func App(Database *mongo.Database) *fiber.App {
 
 	app.Use(cors.New())
 
+
 	app.Use(logger.New(logger.Config{
 		Format: "[${ip}]:${port} ${status} - ${method} ${path}\n",
 	}))

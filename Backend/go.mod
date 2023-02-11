@@ -10,6 +10,7 @@ require (
 	github.com/andybalholm/brotli v1.0.4 // indirect
 	github.com/golang/snappy v0.0.3 // indirect
 	github.com/google/go-cmp v0.5.6 // indirect
+	github.com/google/uuid v1.3.0 // direct
 	github.com/klauspost/compress v1.15.9 // indirect
 	github.com/kr/pretty v0.2.0 // indirect
 	github.com/kr/text v0.2.0 // indirect

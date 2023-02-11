@@ -2,7 +2,8 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "dev": "lerna run dev"
+    "dev": "lerna run dev",
+    "back": "lerna run back"
   },
   "workspaces": [
     "./*"

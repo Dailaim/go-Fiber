@@ -11,9 +11,9 @@ type Task struct {
 	ID          primitive.ObjectID `bson:"_id,omitempty" validate:"required"`
 	CreatedAt   time.Time          `bson:"created_at,omitempty" validate:"required"`
 	UpdatedAt   time.Time          `bson:"updated_at,omitempty" validate:"required"`
-	Title       string             `json:"title" bson:"title" validate:"required,unique"`
-	Description string             `json:"description" bson:"description" validate:"required" `
-	Done        bool               `bson:"done" json:"done"`
+	Title       string             `json:"title" bson:"title" validate:"required,unique" form:"title"`
+	Description string             `json:"description" bson:"description" validate:"required" form:"description"`
+	Done        bool               `bson:"done" json:"done" form:"done,omitempty"`
 }
 
 func NewTask(Data *Task) error {

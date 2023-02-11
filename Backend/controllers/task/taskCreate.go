@@ -2,9 +2,12 @@ package task
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/Daizaikun/Go-Fiber/models"
 	"github.com/gofiber/fiber/v2"
+	"github.com/google/uuid"
+
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
@@ -15,6 +18,7 @@ func Create(c *fiber.Ctx, coll *mongo.Collection) error {
 	err := c.BodyParser(&task)
 
 	if err != nil {
+
 		return c.SendString(err.Error())
 	}
 
@@ -22,6 +26,14 @@ func Create(c *fiber.Ctx, coll *mongo.Collection) error {
 
 	if err != nil {
 		return c.SendString(err.Error())
+	}
+
+	file, err := c.FormFile("document")
+
+	if file != nil && err == nil {
+
+		c.SaveFile(file, fmt.Sprintf("./uploads/%s", uuid.New().String()))
+
 	}
 
 	result, err := coll.InsertOne(context.TODO(), task)
